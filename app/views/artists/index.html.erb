@@ -1,10 +1,13 @@
 <h1>All the Artists</h1>
+<%= link_to "Add Artist", artists_new_path, { :class => "button waves-effect waves-light btn" } %>
 
 <table class="striped bordered">
   <tr>
     <th>Artist</th>
     <th>Albums</th>
     <th>Hometown</th>
+    <th>Edit</th>
+    <th>Delete</th>
   </tr>
 
   <% @artists.each do |artist| %>
@@ -12,6 +15,12 @@
         <td><%= link_to artist.name, artist_path(artist.id) %></td>
         <td><%= artist.albums %></td>
         <td><%= artist.hometown %></td>
+        <td><a class="btn-floating btn-large red" href="<%= artist_edit_path(artist) %>" >
+      			<i class="large material-icons">mode_edit</i>
+    			</a>
+    		</td>
+    		<td><a class="btn-floating btn-large red" data-confirm="Are you sure?" data-method="delete" href="/artists/<%= artist.id %>" rel="nofollow"><i class="large material-icons">not_interested</i>
+    		</a></td>
       </tr>
   <% end %>
 </table>

@@ -1,4 +1,3 @@
-# create a new file in app/controllers/artists_controller.rb
 class ArtistsController < ApplicationController
 
   def index
@@ -8,6 +7,34 @@ class ArtistsController < ApplicationController
   def show
   	@artist = Artist.find(params[:id])
   	@songs = @artist.songs
+	end
+
+	def new
+  	@artist = Artist.new
+	end
+
+	def create
+ 	 	Artist.create(params.require(:artist).permit(:name, :albums, :hometown))
+  	
+  	redirect_to artists_path
+	end
+
+	def edit
+		@artist = Artist.find(params[:id])
+	end
+
+	def update
+		@artist = Artist.find(params[:id])
+		@artist.update_attributes(params.require(:artist).permit(:name, :albums, :hometown))
+		
+		redirect_to @artist
+	end
+
+	def destroy
+		@artist = Artist.find(params[:id])
+		@artist.destroy
+
+		redirect_to artists_path
 	end
 
 end
