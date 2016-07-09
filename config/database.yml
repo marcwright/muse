@@ -81,5 +81,3 @@ test:
 production:
   <<: *default
   database: muse_production
-  username: muse
-  password: <%= ENV['MUSE_DATABASE_PASSWORD'] %>
