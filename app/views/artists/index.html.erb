@@ -9,7 +9,7 @@
 
   <% @artists.each do |artist| %>
       <tr>
-        <td><%= artist.name %></td>
+        <td><%= link_to artist.name, artist_path(artist.id) %></td>
         <td><%= artist.albums %></td>
         <td><%= artist.hometown %></td>
       </tr>
