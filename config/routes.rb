@@ -3,5 +3,5 @@ Rails.application.routes.draw do
   root to: "application#about"
 
   get "artists", to: "artists#index"
-  get "artists/:id", to: "artists#show", as: :artist"
+  get "artists/:id", to: "artists#show", as: :artist
 end
