@@ -1,0 +1,17 @@
+<h1>All the Artists</h1>
+
+<table class="striped bordered">
+  <tr>
+    <th>Artist</th>
+    <th>Albums</th>
+    <th>Hometown</th>
+  </tr>
+
+  <% @artists.each do |artist| %>
+      <tr>
+        <td><%= artist.name %></td>
+        <td><%= artist.albums %></td>
+        <td><%= artist.hometown %></td>
+      </tr>
+  <% end %>
+</table>
