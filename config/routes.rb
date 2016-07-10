@@ -14,4 +14,5 @@ Rails.application.routes.draw do
 
   get 'songs/new', to: "songs#new"
   post "songs", to: "songs#create"
+  post "schmitty", to: "artists#add_song", as: :add_song
 end
