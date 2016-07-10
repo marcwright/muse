@@ -9,10 +9,7 @@
           <%= image_tag(@artist.img, size: "100x100", alt: "Artist Image") %>
           <br>
           <strong><%= link_to song.title %></strong>
-          <%= song.genre %>
+          <em><%= song.genre %></em>
         </div>
-
-
     <% end %>
-
   </div>
